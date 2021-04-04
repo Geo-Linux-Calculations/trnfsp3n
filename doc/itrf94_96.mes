@@ -1,0 +1,73 @@
+
+Author: AC coordinator
+Subject: ITRF96 IGS products change
+
+Dear Colleagues,
+
+Starting on March 1, 1998 (GPS Wk 0947; MJD 50873), according to the
+recommendations of the 1998 AC Workshop, held at ESOC, Darmstadt, Germany,
+Feb. 9-11, 1998, all the IGS products, including the IGS Rapid and Final
+combined orbits/EOP, are based on ITRF96. This change of reference frame,
+from ITRF94 to ITRF96, will introduce only very small discontinuities,
+since ITRF96 reference frame is supposed to be (nominally) the same as that
+of ITRF94.  More specifically, the following changes were estimated, based
+on the ITRF94 and ITRF96 coordinates of the 13 ITRF stations used for the
+ITRF realizations of IGS up to Feb 28, 1998 (GPS Wk 0846; MJD 50872):
+
+
+(IGS(ITRF96)-IGS(ITRF94); epoch 1998.16 (March 1/98, Wk 0947, MJD 50873);
+(the transformation parameters are consistent with the IERS conventions) 
+
+    IGS Orbits/EOP    T1(cm) T2(cm) T3(cm) D(ppb)  R1(mas) R2(mas) R3(mas)
+                                                    PM y    PM x   (-dUT)
+    Parameter          0.0   -.1     .1    -.4    -0.21    -.01    -.22
+    Sigma               .3    .3     .3     .4      .10     .10     .10
+
+    Rates per year      .02  -.09    .02   -.07    -.02     .01     .01
+    sigma               .06   .06    .06    .09     .03     .02     .03 
+
+As see above the expected ITRF94/96 changes are indeed very small, in most
+cases they can be considered statistically (and most likely also
+practically) not significantly different from zero. However, the new
+reference frame realization is expected to be much more precise and robust
+than the previous ITRF94 realization of IGS. This is so since from March 1,
+1998 the new ITRF realization of IGS is based on a much larger set of up to
+47, highly precise and consistent, ITRF96 station positions and velocities,
+provided by the ITRF section of IERS. The new 47 ITRF96 station set,
+adopted by IGS for the ITRF96 realization (of IGS) is also available at the
+IGS CB Archives (IN SINEX Format):
+
+ftp://igscb.jpl.nasa/gov//igscb/station/coord/ITRF96_IGS_RS47.SNX.Z,
+
+or in short version of SINEX format (SSC), (the same as the SINEX but
+without the matrix, i.e. only the solution standard deviations are
+included):
+
+ftp://igscb.jpl.nasa/gov//igscb/station/coord/ITRF96_IGS_RS47.SSC.Z
+ 
+If required, the above transformation should be well suited for all
+IGS products. The transformations for individual AC solutions may vary
+slightly, mainly due to observation/station weighting, geometry and
+modeling. Some ACs have estimated and  included in their Wk 0947 summary
+reports separate transformation parameters that are better suited for their
+solutions. To assist IGS users to bridge the past and the current
+discontinuities caused by the ITRF changes a simple ftn77 program,
+transformation files and a brief description have been prepared and made
+available on the following ftp site:
+
+ ftp macs.geod.emr.ca
+ cd pub/requests/itrf94_96
+
+This program has already been made available for the previous ITRF (ITRF93 to
+ITRF94) change on June 30, 1996. For more details on the much more
+significant changes introduced on June 30/96, please consult:
+
+ftp://igscb.jpl.nasa/gov//igscb/mail/igsmail/igsmess.1391          
+
+For this, ITRF94 to ITRF96, change the program has also been enhanced to
+(optionally) transfer the corresponding ERP files (in the IGS ERP format).
+Also added were the transformation files ITRF94=>ITRF96 and ITRF96=>ITRF94.
+both are based on the above transformation estimates. Below is an updated
+brief program description which has also been put into the above directory.
+_______________________________________________________
+

@@ -1,0 +1,202 @@
+From igscb@igscb.jpl.nasa.gov Fri Mar 20 16:44:09 1998
+Received: from gdim.geod.emr.ca by macs.geod.emr.ca with SMTP
+	(1.38.193.4/16.2) id AA04474; Fri, 20 Mar 1998 16:44:09 GMT
+Return-Path: <igscb@igscb.jpl.nasa.gov>
+Received: from igscb.jpl.nasa.gov by gdim.geod.emr.ca with SMTP
+	(1.38.193.4/16.2) id AA28686; Fri, 20 Mar 1998 11:44:05 -0500
+Received: by igscb.jpl.nasa.gov
+	(1.39.111.2/16.2) id AA139299465; Fri, 20 Mar 1998 07:57:45 -0800
+Date: Fri, 20 Mar 1998 07:57:45 -0800
+To: IGS Mail Recipients <igsmail@igscb.jpl.nasa.gov>
+From: IGS Mail Service <daemon@igscb.jpl.nasa.gov>
+Reply-To: IGS Mail Administrator <owner-igsmail@igscb.jpl.nasa.gov>
+Errors-To: IGS Mail Administrator <owner-igsmail@igscb.jpl.nasa.gov>
+Sender: IGS Mail Administrator <owner-igsmail@igscb.jpl.nasa.gov>
+Subject: No 1838: ITRF96 IGS Product Change
+Status: RO
+
+******************************************************************************
+IGS Electronic Mail      Fri Mar 20  7:57:44 PST 1998      Message Number 1838
+******************************************************************************
+
+Author: AC coordinator
+Subject: ITRF96 IGS Product Change
+
+Subject: ITRF96 IGS products change
+
+Dear Colleagues,
+
+Starting on March 1, 1998 (GPS Wk 0947; MJD 50873), according to the
+recommendations of the 1998 AC Workshop, held at ESOC, Darmstadt, Germany,
+Feb. 9-11, 1998, all the IGS products, including the IGS Rapid and Final
+combined orbits/EOP, are based on ITRF96. This change of reference frame,
+from ITRF94 to ITRF96, will introduce only very small discontinuities,
+since ITRF96 reference frame is supposed to be (nominally) the same as that
+of ITRF94.  More specifically, the following changes were estimated, based
+on the ITRF94 and ITRF96 coordinates of the 13 ITRF stations used for the
+ITRF realizations of IGS up to Feb 28, 1998 (GPS Wk 0846; MJD 50872):
+
+
+(IGS(ITRF96)-IGS(ITRF94); epoch 1998.16 (March 1/98, Wk 0947, MJD 50873);
+(the transformation parameters are consistent with the IERS conventions) 
+
+    IGS Orbits/EOP    T1(cm) T2(cm) T3(cm) D(ppb)  R1(mas) R2(mas) R3(mas)
+                                                    PM y    PM x   (-dUT)
+    Parameter          0.0   -.1     .1    -.4    -0.21    -.01    -.22
+    Sigma               .3    .3     .3     .4      .10     .10     .10
+
+    Rates per year      .02  -.09    .02   -.07    -.02     .01     .01
+    sigma               .06   .06    .06    .09     .03     .02     .03 
+
+As see above the expected ITRF94/96 changes are indeed very small, in most
+cases they can be considered statistically (and most likely also
+practically) not significantly different from zero. However, the new
+reference frame realization is expected to be much more precise and robust
+than the previous ITRF94 realization of IGS. This is so since from March 1,
+1998 the new ITRF realization of IGS is based on a much larger set of up to
+47, highly precise and consistent, ITRF96 station positions and velocities,
+provided by the ITRF section of IERS. The new 47 ITRF96 station set,
+adopted by IGS for the ITRF96 realization (of IGS) is also available at the
+IGS CB Archives (IN SINEX Format):
+
+ftp://igscb.jpl.nasa/gov//igscb/station/coord/ITRF96_IGS_RS47.SNX.Z,
+
+or in short version of SINEX format (SSC), (the same as the SINEX but
+without the matrix, i.e. only the solution standard deviations are
+included):
+
+ftp://igscb.jpl.nasa/gov//igscb/station/coord/ITRF96_IGS_RS47.SSC.Z
+ 
+If required, the above transformation should be well suited for all
+IGS products. The transformations for individual AC solutions may vary
+slightly, mainly due to observation/station weighting, geometry and
+modeling. Some ACs have estimated and  included in their Wk 0947 summary
+reports separate transformation parameters that are better suited for their
+solutions. To assist IGS users to bridge the past and the current
+discontinuities caused by the ITRF changes a simple ftn77 program,
+transformation files and a brief description have been prepared and made
+available on the following ftp site:
+
+ ftp macs.geod.emr.ca
+ cd pub/requests/itrf94_96
+
+This program has already been made available for the previous ITRF (ITRF93 to
+ITRF94) change on June 30, 1996. For more details on the much more
+significant changes introduced on June 30/96, please consult:
+
+ftp://igscb.jpl.nasa/gov//igscb/mail/igsmail/igsmess.1391          
+
+For this, ITRF94 to ITRF96, change the program has also been enhanced to
+(optionally) transfer the corresponding ERP files (in the IGS ERP format).
+Also added were the transformation files ITRF94=>ITRF96 and ITRF96=>ITRF94.
+both are based on the above transformation estimates. Below is an updated
+brief program description which has also been put into the above directory.
+_______________________________________________________
+
+
+
+    ITRF TRANSFORMATIONS (trnfsp3n.doc)
+
+A simple transformation program was written primarily to transform IGS sp3
+orbits between different realizations of ITRF's used by IGS since 1992. The
+program (trnfsp3n) can also be used to transform a station coordinate set
+of  the same epoch, to and from different ITRF's. Optionally, an ERP file
+(in the IGS ERP format) can be transformed, to and from different ITRF's. The
+sp3 orbit/ERP transformations are  required for precise processing of data
+spanning the ITRF changes. The following ITRF realizations have been
+employed by IGS since 1994:
+
+      ITRF92      Jan  2, 1994(Wk 0730) to Dec 31, 1994 (Wk 0781)
+      ITRF93      Jan  1, 1995(Wk 0782) to Jun 29, 1996 (Wk 0859)
+      ITRF94      Jun 30, 1996(Wk 0860) to Feb 28, 1998 (Wk 0946)             
+      ITRF96      Mar 01, 1998(Wk 0947) to present
+
+Using the above program, sp3 orbit (and ERP) files can be instantaneously,
+as required, transferred into ITRF92/93/94/96 and vice versa. Since all IGS
+sp3 orbit/ERP files contain epochs, the proper transformation of the date
+is utilized.
+
+The  ftn77 code source (trnfsp3n.f) has been put onto our ftp directory.
+
+
+    PROGRAM USAGE:
+
+to run the program use:
+
+    trnfsp3n  inputfile(sp3)  outputfile  transfile [input(erp) output(erp)]
+
+where the  'transfile' is a file containing appropriate transformation
+parameters including rates and [input(erp) output(erp)] are the optional
+ERP input and output files in the IGS ERP format. 
+
+The following transformation files  have also been put into the same
+directory:
+
+     ITRF96.itr93             transforms itrf94-> itrf96
+     ITRF94.itr93             transforms itrf93-> itrf94
+     ITRF93.itr92             transforms itrf92-> itrf93
+     ITRF92.itr93             transforms itrf93-> itrf92
+     ITRF93.itr94             transforms itrf94-> itrf93
+     ITRF94.itr96             transforms itrf96-> itrf94
+
+For example, to transform the orbit file IGS09470.sp3/IGS09477.erp (in
+ITRF96(of the current date)) into IGS09470.itr94/IGS09477.erp_94 in
+ITRF94(of the current date) simply run:
+
+ trnfsp3n IGS09470.sp3 IGS09470.itr94 ITRF94.itr96 IGS09477.erp IGS09477.erp_94 
+ 
+or to transform the 13 ITRF94(1993.0) station coordinate set in the file
+ITRF94.13 into ITRF96(1993.0) in ITRF96.out, simply run:
+
+ trnfsp3n  ITRF94.13  ITRF96.out  ITRF96.itr94
+
+The files ITRF94.13, ITRF96.out, and this write up (trnfsp3n.doc) were also put
+into the directory for your convenience.
+
+
+    PROGRAM LIMITATIONS:
+
+All the above ITRF transformations are based on the Analysis Coordinator
+reports published in the 1994, 1995, 1996 IGS Annual Reports, which are
+applicable to the respective IGS ITRF realizations (the ITRF96/ITRF94
+transformation will be included in the 1997 IGS Annual Report). Since the
+above IGS estimates are very close to the nominal (official) transformation
+values published by IERS, the above transformation files can also be used
+for all the applications related to ITRF92/93/94/96 with little or no
+precision compromise.
+
+Only sp3 orbits are transformed, no corresponding transformation (i.e. no
+correction is done to the corresponding ERP file), unless it is
+specifically requested by the optional ERP input and output files as
+demonstrated in the first example. Even when only an ERP file
+transformation is desired,  the first two coordinate files must be
+specified (e.g. "dummy files" such as the included ITRF94.13 & ITRF96.out)
+along with the 'transfile', all must precede the ERP input and output files.
+I.e.
+  trnfsp3n ITRF96.out ITRF94.out ITRF94.itr96 IGS09477.erp IGS09477.erp_94
+
+The epoch of the dummy file is then irrelevant to the ERP file
+transformations as MJD's are used for the transformation epochs. The
+original ITRF94.13 and ITRF94.out must then be identical in this example.
+
+There are only a few syntax limitations, and they all pertain to the  station
+transformations (they are imposed by the sp3 format) namely: The first line
+must have an epoch (YYYY MM DD) in a free format starting after col #3, the
+station coord (in mm, m, or km) must start with "P " or "V " in col. 1. sta
+name of only 3 chars and coordinates must start in, or after col.6.
+
+WARNING: Only ERP's after MJD 50243 (Wk 0857) is processed by the program,
+since only on this date the IGS ERP files has been changed to the current
+IGS ERP format version. If ERP transformation prior this date is needed,
+the corresponding IF statement in the ERPRDWR subroutine will have to be
+removed and the ERP format will have to be tested. 
+
+The ftn77 source code of the program trnfsp3n contains HP UX system
+routines IARGC() and IGETARG() which enable command line input. For
+different systems/installations the local corresponding routines will have
+to be substituted in the source code.
+
+
+[Mailed From: Jan Kouba <kouba@geod.emr.ca>]
+
+

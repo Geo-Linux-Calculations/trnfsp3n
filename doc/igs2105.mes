@@ -1,0 +1,187 @@
+From igscb@igscb.jpl.nasa.gov Fri Dec 18 11:41:29 1998
+Received: from gdim.geod.nrcan.gc.ca by macs.geod.nrcan.gc.ca with SMTP
+	(1.38.193.4/16.2) id AA23665; Fri, 18 Dec 1998 11:41:29 GMT
+Return-Path: <igscb@igscb.jpl.nasa.gov>
+Received: from igscb.jpl.nasa.gov by gdim.geod.nrcan.gc.ca with SMTP
+	(1.38.193.4/16.2) id AA08713; Fri, 18 Dec 1998 06:41:28 -0500
+Received: by igscb.jpl.nasa.gov
+	(1.39.111.2/16.2) id AA193390210; Fri, 18 Dec 1998 03:23:30 -0800
+Date: Fri, 18 Dec 1998 03:23:30 -0800
+To: IGS Mail Recipients <igsmail@igscb.jpl.nasa.gov>
+From: IGS Mail Service <daemon@igscb.jpl.nasa.gov>
+Reply-To: IGS Mail Administrator <owner-igsmail@igscb.jpl.nasa.gov>
+Errors-To: IGS Mail Administrator <owner-igsmail@igscb.jpl.nasa.gov>
+Sender: IGS Mail Administrator <owner-igsmail@igscb.jpl.nasa.gov>
+Subject: No 2105: ITRF94/96 IGS Change-Update
+Status: RO
+
+******************************************************************************
+IGS Electronic Mail      Fri Dec 18  3:23:30 PST 1998      Message Number 2105
+******************************************************************************
+
+Author: AC Coordinator
+Subject: ITRF94/96 IGS Change-Update
+
+Dear IGS Colleagues,
+
+Recently, it was noticed by Dr. Daniel Gambis, Director of the IERS Central 
+Bureau, that the IGS Final EOP series, when compared to the IERS EOP's,
+does not seem to exhibit the estimated 
+March 1/98 discontinuity of about .2 mas in PM y (Polar Motion - y 
+component). This small, expected discontinuities are due to the change of 
+the IGS ITRF realisation, which since March 1, 1998, is based on the 
+following 47 ITRF96 station positions and velocities:
+
+ftp://igscb.jpl.nasa/gov//igscb/station/coord/ITRF96_IGS_RS47.SNX.Z,
+
+This new IGS ITRF96 realisation, has replaced the previous IGS ITRF94 
+realisation which was based on, only up to 13 ITRF94 station positions 
+and velocities and which had been used since June 28, 1996 (see IGSMAIL 
+#1838). 
+
+More specifically, the following March 1/98 changes were expected, as 
+estimated from the ITRF94 and ITRF96 coordinates of the 13 ITRF stations 
+that were used for the ITRF realisations of IGS up to Feb 28/98 (GPS Wk 
+0846; MJD 50872):
+
+(IGS(ITRF94)-IGS(ITRF96); epoch 1998.16 (March 1/98, Wk 0947, MJD 50873);
+(the transformation parameters are consistent with the IERS conventions) 
+
+    IGS Orbits/EOP  T1(cm) T2(cm) T3(cm) D(ppb)  R1(mas) R2(mas) R3(mas)
+                                                  PM y    PM x   (-dUT)
+    Parameter        0.0   0.1    -.1    0.4     0.21     .01     .22
+    Sigma             .3    .3     .3     .4      .10     .10     .10
+
+    Rates per year    -.02  .09    -.02    .07     .02   -.01    -.01
+    sigma              .06  .06     .06    .09     .03    .02     .03 
+
+As seen above the estimated expected ITRF94/96 changes were indeed quite 
+small, in most cases they can hardly be considered statistically (and most 
+likely practically as well) significant, i.e. not significantly different from
+zero. (As it should be expected as ITRF94 & ITRF96 are supposed to be 
+(nominaly) based on the same datum). Furthermore, overlapping solutions done 
+by some ACs (see e.g. CODE and EMR AC summary reports for Wk 0947) seemed 
+to support the above estimates. Subsequently, the above estimate for PM y 
+were applied to the IGS and all AC PM series in the IERS BULL A 
+combinations. However there appears to be a small apparent discontinuity 
+when the two IERS combined EOP series are compared, i.e. the Bull A 
+(which includes the expected PM y shift) and the Bull B (C04) (where no such 
+PM y corrections were applied). Comparisons with VLBI PM series (which, unlike 
+Bull A and B(C04), are independent from the IGS/AC PM solutions) are not 
+conclusive, mainly due to the (7 day) sampling rate. This report is an 
+attempt to investigate, and perhaps indicate if indeed the IGS PM has a 
+discontinuity (as expected) or it happened to be, more or less,continuous as 
+the IERS Bull B (C04) seems to indicate.
+
+As the first step, in the Table 1, the IGS Final (IGS), IGS Rapid (IGR) as 
+well as the new continuous series by CODE & JPL (CODN, JPLN) were compared to
+the IERS Bull A & B (C04) as well as two VLBI EOP series (NEOS (every 7 days) 
+and one by NASA GSFC (daily by Kalman filter also from the 7 day sampling 
+data (1102g.98sep29, prepared by John Gipson and Chopo Ma)). Also note that
+only the VLBI series are truly independent from IGS, 
+as both Bull A and C04 contain significant contributions from the daily IGS 
+as well as some AC series. The CODN, JPLN series, even though they contain the 
+same data, could also be considered independent from the IGS series, at 
+least as far as the March 1/98 discontinuity is concerned. As can be seen 
+from the Table 1, even though far from conclusive, only Bull A shows the 
+expected jump of IGS of about .2 mas. This should not be any surprise as 
+the Bull A combination, as already mentioned above, includes the PM y 
+correction (of .21 mas) based on the above PM y estimates. However, no other 
+continuous series, including both VLBI's and the CODN, JPLN (i.e. 
+the recomputed CODE and JPL EOP's in ITRF96) indicate any significant 
+discontinuities in IGS PM y on March 1, 1998. Though the independent VLBI 
+comparisons can hardly be considered statistically significant due to the 
+large sigmas caused by sparse VLBI observations (every 7 days). The largely 
+independent (in regards to discontinuities)and highly precise series by CODEN 
+indicates only about half (.09 +-.02) of the expected PM y shift,
+while  JPLN gives (-.08 +-.02). (This can  be seen from Table 1
+by subtracting the CODN resp. JPLN PM y values e.g. in the Bull A 
+or C04 columns from the corresponding IGS values.) 
+
+Table 1: Comparisons of the 100 day mean differences before March 1/98 
+(ITRF94) and after March 1/98 (ITRF96) in .01 mas units. The sense is 
+ITRF94-ITRF96 so that the (discontinuous) IGS should show PMy shift of 21 
+(mas/100) according to the above estimates. (CODN, JPLN are new, recomputed, 
+continuous ITRF96 EOP series from CODE and JPL)
+              EOP - BullA   EOP - C04  EOP - VLBI(neos)  EOP-VLBI(gsfc)
+                 PMx  PMy    PMx  PMy          PMx  PMy    PMx   PMy
+IGS ITRf94-96   -0.8 17.4    5.7 -1.4          5.3 -3.5     8.5  2.9
+sig              1.0  0.9    1.5  1.4          8.5  6.6     6.5  5.3
+
+IGR ITRf94-96    9.1 45.0   15.5 26.1         12.8 16.1    18.3  30.4
+sig              3.3  3.5    3.5  3.4          8.7  8.0     7.0   6.4
+
+CODN ITRf94-96  -1.9  8.4    4.5-10.5          4.1-14.7     7.4  -6.2
+sig              1.0  1.3    1.6  1.6          8.9  6.4     6.1   5.0
+
+JPLN ITRf94-96 -12.5 25.4  -14.8  4.4         -8.4  2.5    -3.6   9.8
+sig              1.8  1.7    2.0  1.8          8.9  6.1     6.9   5.3
+
+Bull A ITRf94-96             6.4 -18.9         4.8 -22.2    9.2 -14.6
+sig                          1.1   1.2         8.1   6.1    6.1   5.0
+
+C04 ITRf94-96                                 -1.2  -5.7    2.8   4.3
+sig                                            7.8   6.6    6.3   5.3
+
+ 
+Since the above results can hardly be considered to be conclusive and 
+significant, it was decided to try to investigate possible discontinuities 
+in IGS orbit rotations, as seen by the precise navigation solutions for 
+stations WILL, BRUS and USUD, that are performed every week for evaluations 
+of the IGS and IGR orbits/clocks. Though, the IGS summary reports show only 
+the rms of 15 min epoch navigation solutions w.r.t. to the daily means. 
+Unfortunately, the GIPSY precise navigation solutions has been introduced 
+only after March 8, 98, but fortunately, for this purpose, Yves Mireault of 
+NRCan kindly recomputed 4 weeks before and 5 weeks after the March 1 ITRF 
+change . Here, only daily means, which in fact approximate cumulative (over 
+24 h) precise point positioning solutions were used to check the possible 
+(orientation) discontinuities of IGS and IGR orbits. The differences of the 
+average of 28 daily mean positions, before and after March 1/98, for each 
+of the three stations, (corrected  only for the small change due to 
+station velocities over the 28 days), were used for the solutions of rotation 
+and scale changes. The Table 2 summarises the results for the IGS and IGR 
+orbits.
+
+Table 2. Orientation (ITRF94-ITRF96) discontinuities of IGS and IGR orbits 
+as derived from the daily means of GIPSY 15 min navigation solutions used 
+for IGS orbit/clock evaluations. (Four weeks before and after March 
+1/98)(units: 0.01 mas)
+                       IGS Orbits               IGR Orbits
+                PMx(R2)  PMy(R1)   R3     PMx(R2)    PMy(R1)    R3 
+ITRF94-96        4.3     10.2     30.0      2.6       14.2     100.0
+Sigma            4.4      5.3     16.5      4.5        5.5      55.0
+
+
+As can be seen from the Table 2, the IGS orbit orientations, as seen by the 
+precise point positioning, tend to indicate about half of the expected jump 
+in PM y. This is also supported by the independent and continuous VLBI 
+series, and the CODN series in particular, once the respective sigmas are 
+taken into account. On the other hand the IGS R3 rotation of 30 in Table 2 
+agrees quite well (statistically speaking) with the expected value of 22 
+(mas/100) which is based on the ITRF94/96 direct comparisons. The scale 
+correction estimated for the IGS Final orbit (not shown here) came out also 
+.4 ppm. The R3 and scale changes (not shown here) for the IGR orbits 
+are in relatively poor agreement with the expected values. 
+
+
+Summary
+
+Comparisons of the independent PM series (CODN in pacular) and the IGS Orbit 
+orientations (i.e. shifts of the daily mean positions at WILL, BRUS and 
+USUD) seem to indicate that the  IGS Final PM series shows a PMy shift of about
+half (i.e. 0.10 mas) of the expected value of .21 mas. The remaining rotations 
+(R2(PM x) and R3) and the scale changes were found to be in good agreement 
+with the expected values listed above (i.e. as estimated from the 13 ITRF94 and
+ITRF96 station positions). So, for the highest accuracy applications, and in 
+particular when it is desired to remove apparent discontinuities (on March 1/98)
+in series involving the IGS final products (orbits, EOP),the following values
+PM y/R1 (itr94-itrf96) = .10 +-.05 mas should likely be used.
+
+
+
+
+
+[Mailed From: Jan Kouba <kouba@geod.nrcan.gc.ca>]
+
+
+
