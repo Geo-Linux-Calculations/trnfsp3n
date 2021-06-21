@@ -54,12 +54,12 @@ For example, to transform the orbit/erp files igs10210.sp3/igs10217.erp in
 ITRF97(of the current date) into files igs10210.i96/igs10217.e96 in
 ITRF96(of the current date) simply run:
 
-  trnfsp3n igs10210.sp3 igs10210.i96 ITRF96.i97 igs10217.erp igs10217.e96
+  trnfsp3n dat/igs10210.sp3 dat/igs10210.i96 dat/trans/ITRF96.i97 dat/igs10217.erp dat/igs10217.e96
  
 or to transform the 13 ITRF94(1993.0) station coordinate set in the file
 ITRF94.13 into ITRF96(1993.0) in ITRF96.out, simply run:
 
-  trnfsp3n  ITRF94.13  ITRF96.out  ITRF96.i94
+  trnfsp3n dat/ITRF94.13 dat/ITRF96.out dat/trans/ITRF96.i94
 
 The files ITRF94.13, ITRF96.out, and this write up (trnfsp3n.txt) were also
 put into the directory for your convenience.
@@ -85,7 +85,7 @@ specified (e.g. "dummy files" such as the included ITRF94.13 & ITRF96.out)
 along with the 'transfile', all must precede the ERP input and output
 files. I.e.
 
-  trnfsp3n ITRF96.out ITRF94.out ITRF94.i96 igs09477.erp igs09477.e94
+  trnfsp3n dat/ITRF96.out dat/ITRF94.out dat/trans/ITRF94.i96 dat/igs09477.erp dat/igs09477.e94
 
 The epoch of the dummy file is then irrelevant to the ERP file
 transformations as MJD's are used for the transformation epochs. The

@@ -6,7 +6,7 @@ C USAGE: TRNFSP3 INPUTFILE(SP3) OUTPUTFILE(SP3) TRANSFORMFILE
 C
 C************************* SERVICE_ROUTINES module required for Lahey LF95
 C************************* compilter to use IARC and GETARG routines.
-      USE SERVICE_ROUTINES
+C      USE SERVICE_ROUTINES !!! for F77 DOS and WINDOWS
 C
       IMPLICIT REAL*8 (A-H,O-Z)
       INTEGER*2 IARGC

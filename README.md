@@ -1,3 +1,9 @@
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/Geo-Linux-Calculations/trnfsp3n)
+![GitHub Release Date](https://img.shields.io/github/release-date/Geo-Linux-Calculations/trnfsp3n)
+![GitHub repo size](https://img.shields.io/github/repo-size/Geo-Linux-Calculations/trnfsp3n)
+![GitHub all releases](https://img.shields.io/github/downloads/Geo-Linux-Calculations/trnfsp3n/total)
+![GitHub](https://img.shields.io/github/license/Geo-Linux-Calculations/trnfsp3n)
+
 # The GPS Toolbox: ITRF Transformations
  
 ## Authors
