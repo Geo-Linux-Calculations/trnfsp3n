@@ -11,7 +11,7 @@ employed by IGS since 1994:
 
       ITRF92      Jan  2, 1994(Wk 0730) to Dec 31, 1994 (Wk 0781)
       ITRF93      Jan  1, 1995(Wk 0782) to Jun 29, 1996 (Wk 0859)
-      ITRF94      Jun 30, 1996(Wk 0860) to Feb 28, 1998 (Wk 0946)             
+      ITRF94      Jun 30, 1996(Wk 0860) to Feb 28, 1998 (Wk 0946)
       ITRF96      Mar 01, 1998(Wk 0947) to Jul 31, 1999 (Wk 1020)
       ITRF97      Aug 01, 1999(Wk 1021) to present
 
@@ -55,7 +55,7 @@ ITRF97(of the current date) into files igs10210.i96/igs10217.e96 in
 ITRF96(of the current date) simply run:
 
   trnfsp3n dat/igs10210.sp3 dat/igs10210.i96 dat/trans/ITRF96.i97 dat/igs10217.erp dat/igs10217.e96
- 
+
 or to transform the 13 ITRF94(1993.0) station coordinate set in the file
 ITRF94.13 into ITRF96(1993.0) in ITRF96.out, simply run:
 

@@ -2,7 +2,7 @@
 C
 C TRANSFORMS SP3 EPHEMERIS FROM THE CURRENT (ITRF) FRAME TO A NEW (E.G. NAD83)
 C DATUM
-C USAGE: TRNFSP3 INPUTFILE(SP3) OUTPUTFILE(SP3) TRANSFORMFILE 
+C USAGE: TRNFSP3 INPUTFILE(SP3) OUTPUTFILE(SP3) TRANSFORMFILE
 C
 C************************* SERVICE_ROUTINES module required for Lahey LF95
 C************************* compilter to use IARC and GETARG routines.
@@ -27,6 +27,12 @@ C
 C INTPUT FILE NAMR IS DETERMINED BY COMMAND-STRING PARAMETER 1.
 C
       LENGTH = IARGC()
+      IF (LENGTH.LT.3) THEN
+        WRITE(6,'("USAGE:")')
+        WRITE(6,'("trnfsp3n inputfile(sp3) outputfile transfile")')
+        WRITE(6,'("                    [input(erp) output(erp)]")')
+        RETURN
+      ENDIF
       IF (LENGTH.GT.0) THEN
         CALL GETARG(1,NAMR)
       ENDIF
@@ -80,7 +86,7 @@ C
 C
 C READ RATE OF CHANGE ./Y
 C
-      READ(ITR,*) T1D,T2D,T3D,DD,R1D,R2D,R3D 
+      READ(ITR,*) T1D,T2D,T3D,DD,R1D,R2D,R3D
 C
 C READ FIRST LINE OF INPUT FILE TO GET FIRST EPOCH
 C
@@ -99,7 +105,7 @@ C
 C GET X,Y,X UNITS (KM,M,OR MM) FROM THE FIRST X,Y,Z LINE
         TSTSCL=SQRT(USAV(1)**2+USAV(2)**2+USAV(3)**2)/5.D3
         IF(TSTSCL.LT.1.D-3) THEN
-          WRITE(IOT,'(A80)') LIN             
+          WRITE(IOT,'(A80)') LIN
           GOTO 1000
         ENDIF
 C X,Y,Z IN KM
@@ -109,28 +115,28 @@ C X,Y,Z IN M
 C X,Y,Z IN MM
         IF(TSTSCL.GT.1.D6) SCALE= 1.0D1
 C
-        T1T= (T1+T1D*(EPOCH-TRTIME))*SCALE 
-        T2T= (T2+T2D*(EPOCH-TRTIME))*SCALE 
-        T3T= (T3+T3D*(EPOCH-TRTIME))*SCALE 
+        T1T= (T1+T1D*(EPOCH-TRTIME))*SCALE
+        T2T= (T2+T2D*(EPOCH-TRTIME))*SCALE
+        T3T= (T3+T3D*(EPOCH-TRTIME))*SCALE
         DT = (D + DD*(EPOCH-TRTIME))*1.0D-9
         R1T= (R1+R1D*(EPOCH-TRTIME))*4.848137D-09
         R2T= (R2+R2D*(EPOCH-TRTIME))*4.848137D-09
         R3T= (R3+R3D*(EPOCH-TRTIME))*4.848137D-09
         GO TO 1001
       ELSE
-        WRITE(IOT,'(A80)') LIN             
+        WRITE(IOT,'(A80)') LIN
         GOTO 1000
       ENDIF
 C
 C SECOND LOOP REACH END OF INPUT FILE: OUTPUT TRANSFORMED POSITIONS
-C       
+C
 1050  CONTINUE
       READ(INP,'(A80)',END=901) LIN
       IF(LIN(1:1).EQ."P".OR.LIN(1:1).EQ."V".AND.LIN(2:2).EQ." ")
      *          GO TO 1051
-      WRITE(IOT,'(A80)') LIN             
+      WRITE(IOT,'(A80)') LIN
       GO TO 1050
-1051  CONTINUE                                      
+1051  CONTINUE
       READ(LIN(6:80),*,END=1055) (USAV(K),K=1,3),CLK
 1055  CONTINUE
 1001    IF(USAV(1).NE.0.0D0 ) THEN
@@ -152,11 +158,11 @@ C TRANSFORM SV XYZ TO A NEW REFERENCE FRAME (DATUM)
 C  transform ERP file if ERP output asked for (IERP=1)
       IF(IERP.EQ.1) call ERPRDWR(IEI, IEO, REFNAME, TRTIME,
      +                   R1,R2,R3, R1D, R2D, R3D)
-      STOP 
-1010  FORMAT(4X,I4,4I3,F11.7) 
-1020  FORMAT(3X,I4,4I3,F11.7) 
-1021  FORMAT('*',2X,I4,4I3,F11.7)
-1030  FORMAT(3X,I2,3F13.5,3F12.8)
+      STOP
+C /NOT USED/ 1010  FORMAT(4X,I4,4I3,F11.7)
+C /NOT USED/ 1020  FORMAT(3X,I4,4I3,F11.7)
+C /NOT USED/ 1021  FORMAT('*',2X,I4,4I3,F11.7)
+C /NOT USED/ 1030  FORMAT(3X,I2,3F13.5,3F12.8)
 1041  FORMAT(A5,F13.6,3F14.6)
 1042  FORMAT(A5,F13.3,3F14.3)
 1043  FORMAT(A5,F13.0,3F14.0)
@@ -189,15 +195,15 @@ C -----------------------------------
 20    FORMAT(A80)
         IF(TEXT(1:5).EQ.'  MJD') THEN
           IGSFRM=2
-          READ(LFN002,20) TEXT 
-          WRITE(LFN010,20)TEXT  
+          READ(LFN002,20) TEXT
+          WRITE(LFN010,20)TEXT
           GOTO 50
         END IF
         GOTO 10
-C 
+C
 C PROBLEM: COULD NOT FIND ANY ERP VALUES FOR CENTER CNAME
 C -------------------------------------------------------
-45    WRITE(6,47) 
+45    WRITE(6,47)
 47    FORMAT(/,1X,'EOF IN ERP FILE: ERROR IN SR ERPRDWR',
      1       /,1X,'PROBLEM :  COULD NOT FIND ERP VALUES',
      2       /,1X,'CENTER  : ',A3,
@@ -217,7 +223,7 @@ C -----------
 
             READ(LFN002,*,END=100,ERR=100)XMJD
             BACKSPACE(LFN002)
-            
+
 C
 C IGS FORMAT IS DIFFERENT BEFORE MJD=50243 (wk 857 day 0)
 C ---------------------------------------------------
@@ -237,14 +243,18 @@ C transform ERP
       epoch= (xmjd+2400000.5)/365.2475 -4712.0 - trtime
 c PM units (current 1E-5 arcsec possible future 1e-06 arcsec & 1e-07 sec)
       scle= 1.d02
-      test=sqrt(dble(xp)**2+dble(yp)**2)
+      dxp=dble(xp)
+      dyp=dble(yp)
+      dut1=dble(ut1)
+      test=sqrt(dxp*dxp + dyp*dyp)
       if (test.gt.9.d04) scle=1.d03
-      xp  = xp  + (r2 +r2d*epoch)*scle  
-     1+ dsign(0.5d0,dble(xp))
-      yp  = yp  + (r1 +r1d*epoch)*scle 
-     1+ dsign(0.5d0,dble(yp))
-      ut1 = ut1 - (r3 +r3d*epoch)*1.0d03/15.d0*scle/1.d02
-     1 + dsign(0.5d0, dble(ut1))
+      dxp = dxp  + (r2 +r2d*epoch)*scle + dsign(0.5d0,dxp)
+      dyp = dyp  + (r1 +r1d*epoch)*scle + dsign(0.5d0,dyp)
+      dut1 = dut1 - (r3 +r3d*epoch)*1.0d03/15.d0*scle/1.d02
+     1 + dsign(0.5d0, dut1)
+      xp=int(dxp)
+      yp=int(dyp)
+      ut1=int(dut1)
 C
 C WRITE EOP VALUES
 C ----------
@@ -263,7 +273,7 @@ c write the old format (1e-05 arcsec/1e-06 sec)
 24    FORMAT(F8.2,2I8,I9,I7,2I6,2I8,I4,2I3,4I7)
                 END IF
 c           END IF
-C         
+C
           END IF
 C        ENDIF
 70    CONTINUE

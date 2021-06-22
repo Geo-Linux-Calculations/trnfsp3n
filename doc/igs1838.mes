@@ -1,11 +1,11 @@
 From igscb@igscb.jpl.nasa.gov Fri Mar 20 16:44:09 1998
 Received: from gdim.geod.emr.ca by macs.geod.emr.ca with SMTP
-	(1.38.193.4/16.2) id AA04474; Fri, 20 Mar 1998 16:44:09 GMT
+    (1.38.193.4/16.2) id AA04474; Fri, 20 Mar 1998 16:44:09 GMT
 Return-Path: <igscb@igscb.jpl.nasa.gov>
 Received: from igscb.jpl.nasa.gov by gdim.geod.emr.ca with SMTP
-	(1.38.193.4/16.2) id AA28686; Fri, 20 Mar 1998 11:44:05 -0500
+    (1.38.193.4/16.2) id AA28686; Fri, 20 Mar 1998 11:44:05 -0500
 Received: by igscb.jpl.nasa.gov
-	(1.39.111.2/16.2) id AA139299465; Fri, 20 Mar 1998 07:57:45 -0800
+    (1.39.111.2/16.2) id AA139299465; Fri, 20 Mar 1998 07:57:45 -0800
 Date: Fri, 20 Mar 1998 07:57:45 -0800
 To: IGS Mail Recipients <igsmail@igscb.jpl.nasa.gov>
 From: IGS Mail Service <daemon@igscb.jpl.nasa.gov>
@@ -38,7 +38,7 @@ ITRF realizations of IGS up to Feb 28, 1998 (GPS Wk 0846; MJD 50872):
 
 
 (IGS(ITRF96)-IGS(ITRF94); epoch 1998.16 (March 1/98, Wk 0947, MJD 50873);
-(the transformation parameters are consistent with the IERS conventions) 
+(the transformation parameters are consistent with the IERS conventions)
 
     IGS Orbits/EOP    T1(cm) T2(cm) T3(cm) D(ppb)  R1(mas) R2(mas) R3(mas)
                                                     PM y    PM x   (-dUT)
@@ -46,7 +46,7 @@ ITRF realizations of IGS up to Feb 28, 1998 (GPS Wk 0846; MJD 50872):
     Sigma               .3    .3     .3     .4      .10     .10     .10
 
     Rates per year      .02  -.09    .02   -.07    -.02     .01     .01
-    sigma               .06   .06    .06    .09     .03     .02     .03 
+    sigma               .06   .06    .06    .09     .03     .02     .03
 
 As see above the expected ITRF94/96 changes are indeed very small, in most
 cases they can be considered statistically (and most likely also
@@ -66,7 +66,7 @@ without the matrix, i.e. only the solution standard deviations are
 included):
 
 ftp://igscb.jpl.nasa/gov//igscb/station/coord/ITRF96_IGS_RS47.SSC.Z
- 
+
 If required, the above transformation should be well suited for all
 IGS products. The transformations for individual AC solutions may vary
 slightly, mainly due to observation/station weighting, geometry and
@@ -84,7 +84,7 @@ This program has already been made available for the previous ITRF (ITRF93 to
 ITRF94) change on June 30, 1996. For more details on the much more
 significant changes introduced on June 30/96, please consult:
 
-ftp://igscb.jpl.nasa/gov//igscb/mail/igsmail/igsmess.1391          
+ftp://igscb.jpl.nasa/gov//igscb/mail/igsmail/igsmess.1391
 
 For this, ITRF94 to ITRF96, change the program has also been enhanced to
 (optionally) transfer the corresponding ERP files (in the IGS ERP format).
@@ -108,7 +108,7 @@ employed by IGS since 1994:
 
       ITRF92      Jan  2, 1994(Wk 0730) to Dec 31, 1994 (Wk 0781)
       ITRF93      Jan  1, 1995(Wk 0782) to Jun 29, 1996 (Wk 0859)
-      ITRF94      Jun 30, 1996(Wk 0860) to Feb 28, 1998 (Wk 0946)             
+      ITRF94      Jun 30, 1996(Wk 0860) to Feb 28, 1998 (Wk 0946)
       ITRF96      Mar 01, 1998(Wk 0947) to present
 
 Using the above program, sp3 orbit (and ERP) files can be instantaneously,
@@ -127,7 +127,7 @@ to run the program use:
 
 where the  'transfile' is a file containing appropriate transformation
 parameters including rates and [input(erp) output(erp)] are the optional
-ERP input and output files in the IGS ERP format. 
+ERP input and output files in the IGS ERP format.
 
 The following transformation files  have also been put into the same
 directory:
@@ -143,8 +143,8 @@ For example, to transform the orbit file IGS09470.sp3/IGS09477.erp (in
 ITRF96(of the current date)) into IGS09470.itr94/IGS09477.erp_94 in
 ITRF94(of the current date) simply run:
 
- trnfsp3n IGS09470.sp3 IGS09470.itr94 ITRF94.itr96 IGS09477.erp IGS09477.erp_94 
- 
+ trnfsp3n IGS09470.sp3 IGS09470.itr94 ITRF94.itr96 IGS09477.erp IGS09477.erp_94
+
 or to transform the 13 ITRF94(1993.0) station coordinate set in the file
 ITRF94.13 into ITRF96(1993.0) in ITRF96.out, simply run:
 
@@ -189,7 +189,7 @@ WARNING: Only ERP's after MJD 50243 (Wk 0857) is processed by the program,
 since only on this date the IGS ERP files has been changed to the current
 IGS ERP format version. If ERP transformation prior this date is needed,
 the corresponding IF statement in the ERPRDWR subroutine will have to be
-removed and the ERP format will have to be tested. 
+removed and the ERP format will have to be tested.
 
 The ftn77 source code of the program trnfsp3n contains HP UX system
 routines IARGC() and IGETARG() which enable command line input. For

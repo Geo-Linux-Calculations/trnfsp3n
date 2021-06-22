@@ -1,9 +1,9 @@
-Source: Xpole,Ypole,Xrt,Yrt,LOD: weighted average of centres;             ITR94 
-        UT1-UTC: integrated from the 5th day prior to Bull. A                   
-                 last non-predicted value.                                      
-                                                                                
-Orbits: to be used with the IGS Final Orbits                                    
-                                                                                
+Source: Xpole,Ypole,Xrt,Yrt,LOD: weighted average of centres;             ITR94
+        UT1-UTC: integrated from the 5th day prior to Bull. A
+                 last non-predicted value.
+
+Orbits: to be used with the IGS Final Orbits
+
   MJD      Xpole Ypole UT1-UTC   LOD Xsig Ysig  UTsig LODsig  Nr Nf Nt   Xrt   Y
             (10**-5")    usec   usec (10**-5")   usec   usec           (10**-5"/
 50873.50  -5972  19430  101946  2639    8    7     26      8   0  0  0  -118   160    11    22
